@@ -1,0 +1,117 @@
+﻿body {
+  margin:0px;
+  background-image:none;
+  position:static;
+  left:auto;
+  width:443px;
+  margin-left:0;
+  margin-right:0;
+  text-align:left;
+}
+#base {
+  position:absolute;
+  z-index:0;
+}
+#u5973_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:433px;
+  height:878px;
+}
+#u5973 {
+  border-width:0px;
+  position:absolute;
+  left:10px;
+  top:10px;
+  width:433px;
+  height:878px;
+}
+#u5974 {
+  border-width:0px;
+  position:absolute;
+  left:2px;
+  top:431px;
+  width:429px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u5975_div {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:375px;
+  height:667px;
+  background:inherit;
+  background-color:rgba(242, 242, 242, 1);
+  box-sizing:border-box;
+  border-width:1px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-left:0px;
+  border-top:0px;
+  border-right:0px;
+  border-bottom:0px;
+  border-radius:0px;
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
+  border-bottom-right-radius:0px;
+  border-bottom-left-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+}
+#u5975 {
+  border-width:0px;
+  position:absolute;
+  left:39px;
+  top:119px;
+  width:375px;
+  height:667px;
+}
+#u5976 {
+  border-width:0px;
+  position:absolute;
+  left:2px;
+  top:326px;
+  width:371px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u5977_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:375px;
+  height:376px;
+}
+#u5977 {
+  border-width:0px;
+  position:absolute;
+  left:39px;
+  top:272px;
+  width:375px;
+  height:376px;
+}
+#u5978 {
+  border-width:0px;
+  position:absolute;
+  left:2px;
+  top:180px;
+  width:371px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u5979 {
+  border-width:0px;
+  position:absolute;
+  left:85px;
+  top:335px;
+  width:284px;
+  height:236px;
+  overflow:hidden;
+  background-image:url('../../resources/images/transparent.gif');
+}

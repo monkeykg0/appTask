@@ -19,3 +19,10 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+<!-- 开发记录命令行指令 -->
+<!-- 
+安装好nodejs以及vue-cli 本地环境后，
+1.vue init webpack appTask
+2.
+
+ -->
