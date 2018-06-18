@@ -23,6 +23,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 <!-- 
 安装好nodejs以及vue-cli 本地环境后，
 1.vue init webpack appTask
-2.
-
+2.安装less less-loader
+cnpm install less less-loader --save-dev
+3.安装axios cnpm install axios --save
+4.引入vant cnpm install vant -save
  -->
