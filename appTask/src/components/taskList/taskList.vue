@@ -7,11 +7,8 @@
         <div class="list">
             <div v-for="(item,index) in  tasklist.rows" class="task-item">
                 <div class="task-item-lf">
-                    <div class="img"></div>
-                    <div class="task-item-text">
-                        <span>11111</span> <br>
-                        <span>2222222222222222222222</span>
-                    </div>
+                    <img src="./xs_banner.png" alt="" width="45" height="45">
+                    <b>bitoti</b> 1222264444545555555555555555555555
                 </div>
                 <div class="task-item-rt"></div>
             </div>
@@ -70,22 +67,19 @@ export default {
                  float: left;
                  height:100%;
                  width: calc(100% - 82px);
-                 .img{
+                 &>img{
                      float:left;
                      width: 45px;
                      height:60px;
                  }
                  .task-item-text{
-                     span{
-                         display: inline-block;
-                         
-                     }
+                       float:left;
                  }
             }
              .task-item-rt{
                 float:right;
-                 width:82px;
-                 height:100%;
+                width:82px;
+                height:100%;
             }
           }
       }
