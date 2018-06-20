@@ -28,6 +28,9 @@ input{line-height:normal!important;}
 select[size],select[multiple],select[size][multiple]{border:1px solid #AAA;padding:0;}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}
 audio,canvas,video,progress{display:inline-block;}
+html,body{
+    min-height:100%;
+}
 
 
 
