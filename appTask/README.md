@@ -27,4 +27,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 cnpm install less less-loader --save-dev
 3.安装axios cnpm install axios --save
 4.引入vant cnpm install vant -save
+5.分享引入jssdk cnpm install weixin-js-sdk --save
  -->

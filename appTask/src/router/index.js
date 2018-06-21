@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import taskList from '@/components/taskList/taskList.vue'
-import taskDetail from '@/components/taskDetail/taskDetail.vue'
+import tasksharedetail from '@/components/tasksharedetail/tasksharedetail.vue'
 import taskquestiondetail from '@/components/taskquestiondetail/taskquestiondetail.vue'
 import taskinfo from '@/components/taskinfo/taskinfo.vue'
 Vue.use(Router)
 export default new Router({
+  // mode: 'history',
   routes: [
     {
       path: '/',
@@ -13,9 +14,9 @@ export default new Router({
       component: taskList
     },
     {
-      path:'/taskdetail',
-      name:'taskdetail',
-      component:taskDetail
+      path:'/tasksharedetail',
+      name:'tasksharedetail',
+      component:tasksharedetail
     },{
       path:'/taskquestiondetail',
       name:'taskquestiondetail',

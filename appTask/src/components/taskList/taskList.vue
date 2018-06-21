@@ -29,8 +29,7 @@
                     <button class="task-btn" v-if="item.status== '1'" disabled>即将开始</button>
                     <button class="task-btn" v-if="item.status== '2'" @click="showRedPackage()">领赏金</button>
                     <button class="task-btn"  v-if="item.status== '3' && item.newTask=='0'"  @click="taskdetail(item.type,item.id)">{{item. doneNum}}/{{item. num}}</button>
-                    <button class="task-btn"  v-if="item.status== '3' && item.newTask=='1'"  @click="taskdetail(item.type,item.id)" >{{item. doneNum}}/{{item. num}}</button>
-                     
+                    <button class="task-btn"  v-if="item.status== '3' && item.newTask=='1'"  @click="taskdetail(item.type,item.id)" >{{item. doneNum}}/{{item. num}}</button>   
                 </div>
             </div>
         </div>
@@ -54,10 +53,9 @@ export default {
         taskdetail(Type,Id){
             if(Type=='1'){//分享
                  this.$router.push({
-                path:'/taskdetail',
-                name:'taskdetail',
-                params:{
-                    // type:Type,
+                path:'/tasksharedetail',
+                name:'tasksharedetail',
+                query:{
                         id:Id
                     }
                 })
@@ -92,8 +90,8 @@ export default {
         }
     },
     created(){
-        let basUrl='http://192.168.0.133:8099/taskUser/list';
-        let uuid='?uuid=8fbf904f-3ba4-4320-b744-4c9b1fa15221';
+        let basUrl='https://www.jingfuapp.com/preapp/taskUser/list';
+        let uuid='?uuid=fa323418-23b4-4df7-9b1a-913377e39569';
         let current='&current=1';
         let size='&size=10';
         axios({
