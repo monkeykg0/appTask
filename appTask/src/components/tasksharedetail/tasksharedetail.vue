@@ -1,9 +1,9 @@
 <template>
     <div class="tasksharedetail">
-        <div class="top-nav">
+         <div class="top-nav">
             <van-nav-bar title="分享任务" left-arrow></van-nav-bar>
         </div>
-        <div class="default-banner">
+        <!-- <div class="default-banner">
             <div class="default-pic" v-if="shareinfo.share &&  shareinfo.share.type=='1'">
                 <img :src="shareinfo.share.url[0]" alt="" width="100%" height="100%" />>
             </div>
@@ -12,8 +12,8 @@
             </div> 
         </div>
         <div class="share-msg">
-            <!-- <div class='share-msg-title' v-if="shareinfo.share && shareinfo.share.title">{{shareinfo.share.title}}</div> -->
-            <div class='share-msg-title' >分享内容</div>
+            <div class='share-msg-title' v-if="shareinfo.share && shareinfo.share.title">{{shareinfo.share.title}}</div> 
+           <div class='share-msg-title' >分享内容</div>
             <div class="share-msg-content ":class="{'more':showmore==true}" v-if="shareinfo.share && shareinfo.share.title">
                 {{shareinfo.share.title}}
             </div>
@@ -23,21 +23,22 @@
                 <button class="goshare">复制后点击分享</button>
             </div>
             <div class='share-msg-list'>视频选择</div>
-        </div>
+        </div>   -->
     </div>
 </template>
 <script>
 import axios from 'axios'
 import wx from 'weixin-js-sdk'
 import { Toast } from 'vant';
+import URL from '@/serviceAPI.config.js'
 export default {
     name:'tasksharedetail',
-    data(){
-        return{
-            shareinfo:{},
-            showmore:true,
-        }
-    },
+    // data(){
+    //     return{
+    //         shareinfo:{},
+    //         showmore:true,
+    //     }
+    // },
     methods:{
         gengduo(){
             this.showmore=false;
@@ -48,25 +49,23 @@ export default {
     },
     created(){
         let type = this.$route.query;
-        let baseUrl = "https://www.jingfuapp.com/preapp/taskSource/taskSourceInfo";
-        let id = "?id=" + type.id;
-        let uuid = "&uuid=fa323418-23b4-4df7-9b1a-913377e39569";
+        let id = "&id=" + type.id;
         console.log(type)
+        // axios({
+        //     method:'get',
+        //     url:URL.tasksharedetail+id+"&type=1"
+        // }).then((Response)=>{
+        //     // console.log(Response)
+        //     if(Response.status==200){
+        //         this.shareinfo=Response.data.data;
+        //         //console.log(this.shareinfo)
+        //     }
+        // }).catch((error)=>{
+        //     console.log(error)
+        // });
         axios({
             method:'get',
-            url:baseUrl+id+uuid+"&type=1"
-        }).then((Response)=>{
-            // console.log(Response)
-            if(Response.status==200){
-                this.shareinfo=Response.data.data;
-                //console.log(this.shareinfo)
-            }
-        }).catch((error)=>{
-            console.log(error)
-        });
-        axios({
-            method:'get',
-            url:'https://www.jingfuapp.com/preapp/sysUser/weixin/share?uuid=fa323418-23b4-4df7-9b1a-913377e39569'+'&url='+location.href.split('#')[0]
+            url:'https://www.jingfuapp.com/preapp/sysUser/weixin/share?uuid=fa323418-23b4-4df7-9b1a-913377e39569'+'&url='+window.location.href.split("#")[0]
         }).then((Response)=>{
             console.log(Response)
             if(Response.status==200){
@@ -74,49 +73,68 @@ export default {
                 let timestamp=Response.data.data.timestamp;
                 let nonceStr=Response.data.data.nonceStr;
                 let signature=Response.data.data.signature;
+                alert('签名为:'+signature)
                 wx.config({
                     debug:true,
                     appId: appId, // 必填，公众号的唯一标识
                     timestamp: timestamp, // 必填，生成签名的时间戳
                     nonceStr: nonceStr, // 必填，生成签名的随机串
                     signature: signature,// 必填，签名，
-                    jsApiList: ['onMenuShareAppMessage','onMenuShareTimeline','error','hideAllNonBaseMenuItem','showMenuItems'] // 必填，需要使用的JS接口列表
-                });
+                    jsApiList: ['onMenuShareTimeline','error'] // 必填，需要使用的JS接口列表
+                })
                     wx.ready(function () {
-                        alert('进入')
+                        alert('进入wx.ready')
+                    
                 // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
-                wx.onMenuShareAppMessage({
-                    title: "分享自定义标题", // 分享标题
-                    desc: "分享自定义描述", // 分享描述
-                    link: "https://jingfuapp.com",//分享点击之后的链接
-                    imgUrl:'http://jingfuapp.oss-cn-hangzhou.aliyuncs.com/upload/2018/06/19/1529386767094.jpg', // 分享图标
-                    type: 'link', // 分享类型,music、video或link，不填默认为link
-                    success: function () {
-                        //成功之后的回调
-                    }
-                });
-                wx.hideAllNonBaseMenuItem();
-                wx.showMenuItems({
-                    menuList: ['menuItem:share:appMessage', 'menuItem:share:timeline'] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
-                });
+                // wx.onMenuShareAppMessage({
+                //     title: "分享自定义标题", // 分享标题
+                //     desc: "分享自定义描述", // 分享描述
+                //     link: "https://jingfuapp.com",//分享点击之后的链接
+                //     imgUrl:'http://jingfuapp.oss-cn-hangzhou.aliyuncs.com/upload/2018/06/19/1529386767094.jpg', // 分享图标
+                //     type: 'link', // 分享类型,music、video或link，不填默认为link
+                //     success: function () {
+                //         //成功之后的回调
+                //     }
+                // });
+             
+                // wx.showMenuItems({
+                //     menuList: ['menuItem:share:appMessage', 'menuItem:share:timeline'] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
+                // });
+                // wx.onMenuShareTimeline({
+                //     title: "分享自定义标题", // 分享标题
+                //     desc: "分享自定义描述", // 分享描述
+                //     link: window.location.href.split('#')[0],//分享点击之后的链接
+                //     imgUrl:'http://jingfuapp.oss-cn-hangzhou.aliyuncs.com/upload/2018/06/19/1529386767094.jpg', // 分享图标
+                //     type: 'link', // 分享类型,music、video或link，不填默认为link
+                //     success: function () {
+                //         //成功之后的回调
+                //         alert('函数成功')
+                        
+                //     },
+                //     cancel: function () {
+                //         // 用户取消分享后执行的回调函数
+                           
+                //     }
+                // });
+                 //分享到朋友圈
                 wx.onMenuShareTimeline({
-                    title: "分享自定义标题", // 分享标题
-                    desc: "分享自定义描述", // 分享描述
-                    link: "https://jingfuapp.com",//分享点击之后的链接
-                    imgUrl:'http://jingfuapp.oss-cn-hangzhou.aliyuncs.com/upload/2018/06/19/1529386767094.jpg', // 分享图标
-                    type: 'link', // 分享类型,music、video或link，不填默认为link
-                    success: function () {
-                        //成功之后的回调
-                        alert('success')
-                    },
-                    cancel: function () {
-                        // 用户取消分享后执行的回调函数
-                             alert('calc')
-                    }
+                title:"分享自定义标题" , // 分享标题
+                link: window.location.href.split('#')[0], // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                imgUrl: 'http://jingfuapp.oss-cn-hangzhou.aliyuncs.com/upload/2018/06/19/1529386767094.jpg', // 分享图标
+                success: function (res) {
+                // 用户确认分享后执行的回调函数
+                logUtil.printLog("分享到朋友圈成功返回的信息为:",res);
+               
+                },
+                cancel: function (res) {
+                // 用户取消分享后执行的回调函数
+                logUtil.printLog("取消分享到朋友圈返回的信息为:",res);
+                }
                 });
             }); 
                 wx.error(function(res){//通过error接口处理失败验证
                     // config信息验证失败会执行error函数
+                    console.log('错误信息：'+res)
                     alert('失败')
                 });
             }

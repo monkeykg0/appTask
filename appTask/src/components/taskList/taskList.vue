@@ -37,6 +37,7 @@
 </template>
 <script>
 import axios from 'axios'
+import URL from '@/serviceAPI.config.js'
 export default {
     name:'taskList',
     filters:{
@@ -63,7 +64,7 @@ export default {
                 this.$router.push({
                     path:'/taskquestiondetail',
                     name:'taskquestiondetail',
-                    params:{
+                    query:{
                         id:Id
                     }
                 })
@@ -90,13 +91,11 @@ export default {
         }
     },
     created(){
-        let basUrl='https://www.jingfuapp.com/preapp/taskUser/list';
-        let uuid='?uuid=fa323418-23b4-4df7-9b1a-913377e39569';
         let current='&current=1';
         let size='&size=10';
         axios({
             method:'get',
-            url:basUrl+uuid+current+size
+            url:URL.taskList+current+size
         }).then((Response)=>{
             if(Response.status==200){
                 this.tasklist=Response.data.data;

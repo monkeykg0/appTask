@@ -54,6 +54,7 @@
 </template>
 <script>
 import axios from "axios";
+import URL from '@/serviceAPI.config.js'
 export default {
   name: "taskinfo",
   filters: {
@@ -68,13 +69,11 @@ export default {
   },
   created() {
     let type = this.$route.query;
-    let baseUrl = "https://www.jingfuapp.com/preapp/projectTask/projectTaskInfo";
-    let id = "?id=" + type.id;
-    let uuid = "&uuid=fa323418-23b4-4df7-9b1a-913377e39569";
+    let id = "&id=" + type.id;
     console.log(type);
     axios({
       method: "get",
-      url: baseUrl + id + uuid
+      url: URL.taskinfo+id
     }).then(Response => {
       //console.dir(Response)
       if (Response.status == 200) {
