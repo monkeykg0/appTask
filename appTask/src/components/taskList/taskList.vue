@@ -144,6 +144,7 @@ export default {
                 // padding-top:9px;
                 .task-item-name{
                     width:100%;
+                    padding-top:0.41rem;
                     color: #4E99FF;
                     font-size: 16px;
                     font-weight:500;

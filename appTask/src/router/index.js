@@ -20,7 +20,11 @@ export default new Router({
     },{
       path:'/taskquestiondetail',
       name:'taskquestiondetail',
-      component:taskquestiondetail
+      component:taskquestiondetail,
+      // children:[{
+      //   path:'/q1',
+      //   component:'q1'
+      // }]
     },
     {
       path:'/taskinfo',

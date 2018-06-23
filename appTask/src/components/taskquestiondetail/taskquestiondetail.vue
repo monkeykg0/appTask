@@ -5,9 +5,14 @@
         </div>
         <div class="total-ques" v-if="questioninfo.question && questioninfo.question.length">共{{questioninfo.question.length}}题</div>
         <div class="question-detail">
-            <div class=" countdown">09</div>
+            <div class=" countdown">{{limitTime}}</div>
             <div class="question-wrapper">
-                <div class="question"></div>
+                <div class="question " :class="{'show':show}" v-for="(item,index) in questioninfo.question" :key="index" >
+                    <div class="question-title">{{item.name}}</div>
+                    <div class="answer" v-html="$options.filters.str(item.answer)[0]" v-if="$options.filters.str(item.answer)[0]" ></div>
+                    <div class="answer" v-html="$options.filters.str(item.answer)[1]" v-if="$options.filters.str(item.answer)[1]"></div>
+                    <div class="answer" v-html="$options.filters.str(item.answer)[2]" v-if="$options.filters.str(item.answer)[2]"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -17,9 +22,20 @@ import URL from '@/serviceAPI.config.js'
 import axios from 'axios'
 export default {
     name:'taskquestiondetail',
+    filters: {
+    str:function(msg) {
+        let answer=[];
+        answer.push(msg.split("B")[0]);
+        answer.push("B"+msg.split("B")[1].split("C")[0])
+        answer.push("c"+msg.split("B")[1].split("C")[1])
+      return answer;
+    }
+  },
     data(){
         return{
-            questioninfo:{}
+            questioninfo:{},
+            show:false,
+            limitTime: 15,
         }
     },
     created(){
@@ -74,6 +90,13 @@ export default {
                 top:-23px;
                 left:135px;
                 background: white;
+            }
+            .question-wrapper{
+                .question{
+                    &.show{ 
+                        display:none;
+                    }
+                }
             }
         }
     }

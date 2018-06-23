@@ -1,0 +1,94 @@
+* {
+  font-family: 'Hiragino Sans GB', 'PingFangSC-Regular', sans-serif;
+}
+body,
+html {
+  width: 100%;
+  min-height: 100%;
+}
+.tasklist {
+  margin-top: 1.4rem;
+}
+.tasklist .list .notask {
+  padding-top: 3.12rem;
+  display: none;
+  text-align: center;
+}
+.tasklist .list .notask .tips {
+  text-align: center;
+  font-size: 0.28rem;
+  color: #323333;
+}
+.tasklist .list .hastask {
+  display: none;
+}
+.tasklist .list .hastask .banner {
+  height: 3.94rem;
+  background: url('../images/xs_banner.png') no-repeat center center;
+  background-size: 100% 100%;
+}
+.tasklist .list .hastask .item {
+  padding: 0.6rem 0.5rem;
+}
+.tasklist .list .hastask .item .item-wrapper {
+  height: 1.8rem;
+  border-radius: 0.23rem;
+  box-shadow: 0px 0px 6px rgba(78, 153, 255, 0.2);
+  margin-bottom: 0.3rem;
+  display: flex;
+}
+.tasklist .list .hastask .item .item-wrapper .avater {
+  flex: 0 0 0.9rem;
+  width: 0.9rem;
+  margin-right: 0.12rem;
+  padding-top: 0.24rem;
+}
+.tasklist .list .hastask .item .item-wrapper .avater > img {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+.tasklist .list .hastask .item .item-wrapper .text {
+  flex: 1;
+  overflow: hidden;
+}
+.tasklist .list .hastask .item .item-wrapper .text .text-name {
+  width: 100%;
+  padding-top: 0.41rem;
+  color: #4E99FF;
+  font-size: 0.32rem;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tasklist .list .hastask .item .item-wrapper .text .text-describe {
+  font-size: 0.24rem;
+  color: #666666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.tasklist .list .hastask .item .item-wrapper .status {
+  flex: 0 0 1.64rem;
+  width: 1.64rem;
+  margin-left: 0.57rem;
+}
+.tasklist .list .hastask .item .item-wrapper .status .status-title {
+  padding-top: 0.41rem;
+  font-size: 0.24rem;
+  text-align: center;
+  color: #fe8602;
+}
+.tasklist .list .hastask .item .item-wrapper .status > button {
+  width: 1.64rem;
+  height: 0.7rem;
+  background: #4e99ff;
+  color: white;
+  font-size: 0.32rem;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  margin-top: 0.15rem;
+}
