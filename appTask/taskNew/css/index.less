@@ -94,3 +94,178 @@ body,html{
         }
     }
 }
+.taskinfo{
+    margin-top:1.4rem;
+    padding-top:3.56rem;
+    padding-left:0.3rem;
+    padding-right:0.3rem;
+    padding-bottom:0.5rem;
+    background: url('../images/taskinfo-bg.png') no-repeat center center;
+    background-size: 100% 100%;
+    .taskinfo-name{
+        font-size:0.38rem;
+        color:white;
+        text-align: center;
+        margin-bottom:0.6rem;
+    }
+    .taskinfo-content{
+        .taskinfo-content-head{
+            min-height:100px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background: white;
+            padding-top:0.48rem;
+            padding-left:0.3rem;
+            padding-right:0.3rem;
+            .project{
+                height: 1.8rem;
+                background: url('../images/22.png') no-repeat center center;
+                background-size:100% 100%;
+                padding-left:1.66rem;
+                padding-right:0.13rem;
+                display: flex;
+                .project-lf{
+                    flex:1;
+                    overflow: hidden;
+                    .projectName{
+                        margin-top:0.2rem;
+                        color:#FEFF8B;
+                        font-size:0.36rem;
+                    }
+                    .commission{
+                        color:#D2003C;
+                        font-size:0.40rem;
+                      
+                    }
+                    .telphone{
+                        color: white;
+                        font-size: 0.3rem;
+                    }
+                }
+                .project-rt{
+                    flex:0 0 1.32rem;
+                    margin-left:0.5rem;
+                    width: 1.32rem;
+                    &>a{
+                        display: inline-block;
+                        width:100%;
+                        margin-top:0.42rem;
+                    }
+                }
+            }
+            .project-describe{
+                margin-top:0.48rem;
+                .project-describe-title{
+                    font-size: 0.36rem;
+                    color:#7F4A00;
+                    font-weight:700;
+                    margin-bottom:0.36rem;
+                    &>span{
+                        display: inline-block;
+                        width:0.12rem;;
+                        height:0.33rem;
+                        background: #7F4A00;
+                        margin-right:0.17rem;
+                    }
+                }
+                .project-describe-text{
+                    font-size: 0.24rem;
+                    color:#BA8030;
+                    padding-left:0.17rem;
+                    &>span{
+                        display: inline-block;
+                        width:0.21rem;;
+                        height:0.21rem;
+                        border-radius: 50%;
+                        background: #7F4A00; 
+                        margin-right:0.17rem;
+                    }
+                }
+                .endTime{
+                    color:#FF2F69;
+                    font-size: 0.32rem;
+                    font-weight:700;
+                    margin-top:0.44rem;
+                }
+            }
+        }
+        .chain{
+
+        }
+        .subTaskInfo{
+            background: white;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            .has-receive{
+                .receive{
+                    color:#BA8030;
+                    font-size: 0.24rem;
+                    padding-left:0.3rem;
+                    padding-right:0.3rem;
+                    padding-bottom: 0.4rem;
+                    border-bottom:1px solid #FED584;
+                }
+                .receiveUser{
+                    margin-left:0.3rem;
+                    margin-right:0.3rem;
+                    padding-top:0.45rem;
+                    padding-bottom:0.36rem;
+                    border-bottom:1px solid #FED584;
+                    height:1.8rem;
+                    display: flex;
+                    color:#BA8030;
+                    .portrait{
+                        flex: 0 0 1rem;
+                        width:1rem;
+                    }
+                    .realname-wrapper{
+                        flex:1;
+                        overflow: hidden;
+                        font-size: 0.26rem;
+                        .realname{
+                            margin-top:0.1rem;
+                            margin-bottom:0.31rem;
+                        }
+                        .settlementTime{
+                            
+                        }
+                    }
+                  
+                    .price{
+                        flex:0 0 1.5rem;
+                        width:1.5rem;
+                        height:1.8rem;
+                        line-height: 1.8rem;
+                        font-size: 0.3rem;
+                        font-weight: bold;
+                    }
+                }
+                .status-btn{
+                    height:1.6rem;
+                    border-top:1px solid #FED584;
+                    padding:0.5rem 0.44rem 0.4rem 0.44rem;
+                    
+                    &>button{
+                        height:1.6rem;
+                        width:100%;
+                        border:none;
+                        outline: none;
+                        // background: transparent;
+                        background: url('../images/btn.png') no-repeat center center;
+                        background-size: 100% 100%;
+                    }
+                   
+                }
+            }
+            .no-receive{
+                padding-left:0.3rem;
+                padding-right:0.3rem;
+                height:1.8rem;
+                line-height:1.8rem;
+                color:#BA8030;
+            }
+            
+        }
+    }
+    
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>任务详情</title>
+    <script src="https://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+    <script src="js/font.js"></script>
+    <script src="js/getos.js"></script>
+    <script src="js/api.config.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="taskinfo">
+        <h3 class="taskinfo-name">分享铂金公馆项目书</h3>
+        <div class="taskinfo-content">
+            <div class="taskinfo-content-head">
+                <div class=" project">
+                    <div class="project-lf">
+                        <p class="projectName">铂金公馆</p>
+                        <p class="commission">12.56</p>
+                        <p class="telphone">13556453452</p>
+                    </div>
+                    <div class="project-rt">
+                        <a href="#">
+                            <img src="images/phone.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="project-describe">
+                    <p class="project-describe-title"> <span class="block"></span>任务规则</p>
+                    <div class="project-describe-text"> <span class="circle"></span>完成2次分享，分享时间间隔不得少于2个小时才能
+                        完成任务 
+                    </div>
+                    <p class="endTime">结束时间：2018-06-28</p>
+                </div>
+            </div>
+            <div class="chain">
+                <img src="images/chain.png" alt="" width="100%;">
+            </div>
+            <div class="subTaskInfo">
+                <div class="has-receive">
+                    <p class="receive">已领取61    8000元</p>    
+                    <div class="receiveUser">
+                        <div class="portrait">头像</div>
+                        <div class="realname-wrapper">
+                            <div class="realname">链家房产张小三</div>
+                            <div class="settlementTime">18-03-20</div>
+                        </div>
+                        <div class="price">100.00</div> 
+                    </div>
+                    <div class="receiveUser"></div>
+                    <div class="status-btn">
+                        <button>0/1</button>
+                    </div>
+                </div>
+                <!-- <div class="no-receive">暂无完成</div> -->
+            </div>
+            
+        </div> 
+    </div>
+    <script>
+          if(getOS()=='ios'){
+        //    ios
+        } 
+        if(getOS()=='android'){
+        // android   
+        document.getElementsByClassName('taskinfo')[0].style.marginTop=0;
+        }
+    </script>
+</body>
+</html>

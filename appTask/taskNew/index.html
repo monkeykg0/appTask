@@ -47,7 +47,7 @@
         } 
         if(getOS()=='android'){
         // android   
-        document.getElementsByClassName('faq-content')[0].style.marginTop=0;
+        document.getElementsByClassName('tasklist')[0].style.marginTop=0;
         }
 
         $(document).ready(function(){
@@ -80,18 +80,51 @@
                 //    let avater=listinfo.rows[i].avater
                 // 任务类型 1.分享2.答题3.上客4.成交5.招募
                 let type=listinfo.rows[i].type;
-                // 任务状态 1.即将开始 2.瓜分红包 3. 0/1 4:到点结算：已完成，未领红包
+                // 任务状态 1.即将开始 2.瓜分红包 3. 0/1 4:到点结算：已完成，未领红包 
+                //5.进行中，没有人做6.已完成7.到点结算：进行中
                 let status=listinfo.rows[i].status;
                 // 新任务 0.否 1.是
                 let newTask=listinfo.rows[i].newTask;
                 var statusTitle='';
                 var btnContent='';
-                if(newTask=='0'){//不是任务
+                // if(newTask=='0'){//不是新任务
+                //     if(status=='1'){//即将开始
+                //         statusTitle=
+                //         btnContent='即将开始'
+                //     }
 
-                }else if(newTask=='1'){//新任务
+                // }else if(newTask=='1'){//新任务
+                //     statusTitle='新任务'
+                //     btnContent='即将开始';
+                // }
+                if(status=='1'){//即将开始
+                    statusTitle='新任务';
                     btnContent='即将开始';
-                    statusTitle='新任务'
+                }else if(status=='2'){
+                    statusTitle='最高已领'+parseInt(listinfo.rows[i]. receiveMax)+'元';
+                    btnContent='瓜分红包'
+                }else if(status=='3'){
+                    statusTitle='最高已领'+parseInt(listinfo.rows[i]. receiveMax)+'元';
+                    btnContent=listinfo.rows[i].doneNum+'/'+listinfo.rows[i].num;
+                }else if(status=='4'){
+                    let time=parseInt((new Date(listinfo.rows[i].endTime)).getTime())-parseInt((new Date()).getTime());
+                    console.log(time)
+                    let day=parseInt( time/ (1000 * 60 * 60 * 24));
+                    let hour=parseInt((time- day*24*60*60*1000)/(1000*60*60));
+                    let min=parseInt((time-day*24*60*60*1000-hour*60*60*1000)/(1000*60));
+                    statusTitle=day>=0 ? (day+"天"+hour+"时"+min+"分") : (hour+"时"+min+"分")
+                    btnContent='已完成';
+                }else if(status=='5'){
+                    statusTitle='新任务';
+                    btnContent=listinfo.rows[i].doneNum+'/'+listinfo.rows[i].num;
+                }else if(status=='6'){
+                    statusTitle='最高已领'+parseInt(listinfo.rows[i]. receiveMax)+'元';
+                    btnContent='已完成';
+                }else{
+                    statusTitle='最高已领'+parseInt(listinfo.rows[i]. receiveMax)+'元' ;
+                    btnContent=listinfo.rows[i].doneNum+'/'+listinfo.rows[i].num;
                 }
+
                 $('.item').append(`
                <div class="item-wrapper">
                         <div class="avater">
@@ -115,7 +148,11 @@
 
         });
        
-
+        // function format(TIME){
+        //     let day=parseInt( TIME/ (1000 * 60 * 60 * 24));
+        //     let hour=paeseInt((TIME- day*24*60*60*1000)/(1000*60*60));
+        //     let min=parseInt((TIME-day*24*60*60*1000-hour*60*60*1000)/(1000*60));
+        // }
    </script>
 </body>
 </html>
